@@ -1,41 +1,100 @@
 # 🛰️ AI-Based Satellite Image Classification for Land-Cover Detection
 
-## Project Overview
-This project uses deep learning to classify satellite images into 10 land-cover categories using the EuroSAT dataset.
+## 📌 Project Overview
 
-## Model and Technologies
-- Model: ResNet18
-- Dataset: EuroSAT
-- Framework: PyTorch
-- Programming Language: Python
-- Web Application: Streamlit
+This project uses deep learning to classify satellite images into 10 land-cover categories using the EuroSAT dataset. It includes a trained ResNet18 model and a Streamlit web application for image classification.
 
-## Dataset
-EuroSAT contains 27,000 satellite images across 10 land-cover classes.
+## 🧠 Model and Technologies
 
-- Training images: 18,900
-- Validation images: 4,050
-- Test images: 4,050
+* **Model:** ResNet18
+* **Dataset:** EuroSAT
+* **Framework:** PyTorch
+* **Programming Language:** Python
+* **Web Application:** Streamlit
 
-## Preliminary Results
-Validation accuracy: 91.95% after 3 epochs.
+## 📊 Dataset
 
-Note: This is a preliminary validation result, not final test accuracy. Performance on new images may vary.
+The project uses the EuroSAT dataset, containing satellite images across 10 land-cover classes.
 
-## Features
-- Upload a satellite image
-- Predict its land-cover category
-- Display model confidence
-- Show top predictions
+* Total images: 27,000
+* Training images: 18,900
+* Validation images: 4,050
+* Test images: 4,050
+* Number of classes: 10
 
-## How to Run
-Install the required libraries:
+### Land-cover classes
 
-pip install -r requirements.txt
+AnnualCrop, Forest, HerbaceousVegetation, Highway, Industrial, Pasture, PermanentCrop, Residential, River, SeaLake.
 
-Start the application:
+## 📈 Model Performance
 
-streamlit run app.py
+* **Validation accuracy:** 91.95%
+* **Training epochs:** 3
+* **Training device:** CPU
 
-## Disclaimer
-This is an academic research prototype. Predictions may be incorrect.
+*Note: This is the validation accuracy from the current training run. Test-set performance has not yet been reported. Model confidence scores are not guaranteed to indicate prediction correctness.*
+
+## 🚀 Features
+
+* Upload a satellite image (JPG or PNG).
+* Predict its land-cover category.
+* Display prediction confidence.
+* Show the top predicted categories.
+
+## 🛠️ Installation and Setup
+
+1. Clone this repository:
+
+   ```bash
+   git clone https://github.com/24A31A05JU/satellite-landcover-classification.git
+   cd satellite-landcover-classification
+   ```
+
+2. Install the required packages:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Download or prepare the EuroSAT dataset using the dataset script and place it in the expected data directory.
+
+4. Run the Streamlit application:
+
+   ```bash
+   python -m streamlit run app.py
+   ```
+
+## 📂 Project Structure
+
+```text
+satellite-landcover-classification/
+├── app.py
+├── requirements.txt
+├── src/
+│   ├── train_model.py
+│   ├── evaluate_model.py
+│   ├── download_dataset.py
+│   ├── split_dataset.py
+│   └── test_model.py
+├── data/
+├── models/
+└── outputs/
+```
+
+## 🔬 Future Improvements
+
+* Evaluate performance on the held-out test set.
+* Compare ResNet18 with other classification models.
+* Improve performance through hyperparameter tuning and data augmentation.
+* Add class-wise precision, recall, F1-score, and confusion matrix analysis.
+* Explore applications in land-cover monitoring and remote sensing.
+
+## 👩‍💻 Author
+
+**Akanksha Talabattula**
+
+GitHub: [24A31A05JU](https://github.com/24A31A05JU)
+
+## ⚠️ Disclaimer
+
+This project is a student research prototype for educational purposes. Predictions may be incorrect and should not be used as the sole basis for real-world land-management decisions.
